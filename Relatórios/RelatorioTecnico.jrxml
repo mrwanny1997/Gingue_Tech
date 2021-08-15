@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="RelatorioTecnico" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="bf5cc3ec-cd73-427b-9f5b-ed7a58e5a089">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[SELECT * FROM `tb_tecnico` order by nome_tecnico]]>
+	</queryString>
+	<field name="id_tecnico" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nome_tecnico" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="telefone_tecnico" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="email_tecnico" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="estatus_tecnico" class="java.lang.Boolean">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="121" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="2" y="1" width="800" height="120" forecolor="#99FFFF" backcolor="#99FFFF" uuid="9bec219c-3cad-478b-9339-3322a39a461b"/>
+				<image>
+					<reportElement x="221" y="10" width="400" height="100" uuid="6f3bc69a-aae2-4503-9eb4-7c5d8e6b2b07"/>
+					<imageExpression><![CDATA["C:\\Users\\Mr. Wanny\\Documents\\NetBeansProjects\\Empresa Gingue Tech\\src\\Imagens\\Gingue Tech 2.0.png"]]></imageExpression>
+				</image>
+				<staticText>
+					<reportElement x="10" y="66" width="167" height="44" uuid="b66a07fa-eab6-4a91-a5f3-fc4700b23dbf"/>
+					<textElement>
+						<font size="30"/>
+					</textElement>
+					<text><![CDATA[TÉCNICOS]]></text>
+				</staticText>
+			</frame>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="73">
+			<rectangle radius="10">
+				<reportElement x="2" y="18" width="800" height="35" forecolor="#000000" backcolor="#FFFFFF" uuid="51a1e797-aa12-4e52-9e4b-615867997388"/>
+			</rectangle>
+			<staticText>
+				<reportElement mode="Transparent" x="2" y="18" width="800" height="35" forecolor="#000000" uuid="b9e210d9-1f63-4339-8e34-04088a089fb5"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="20" isBold="true"/>
+				</textElement>
+				<text><![CDATA[LISTA DE TÉCNICOS]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="34" splitType="Stretch">
+			<staticText>
+				<reportElement x="30" y="0" width="69" height="20" uuid="34645ac4-7add-4845-a1fb-4f42902dd1d8"/>
+				<textElement>
+					<font size="13" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="116" y="0" width="160" height="20" uuid="70b20e6e-dd2c-46a0-b2dd-7902b0c2a43d"/>
+				<textElement>
+					<font size="13" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nome]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="300" y="0" width="124" height="20" uuid="7373cf17-61ce-4234-ae1b-2c0e11d64d97"/>
+				<textElement>
+					<font size="13" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Telefone]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="450" y="0" width="203" height="20" uuid="36e00a13-559d-4175-872d-255ee9652f01"/>
+				<textElement>
+					<font size="13" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Email]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="681" y="0" width="121" height="20" uuid="c963a292-7cda-4f61-abd8-a6445d33661f"/>
+				<textElement>
+					<font size="13" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Estatus]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="33" splitType="Stretch">
+			<textField>
+				<reportElement x="30" y="0" width="69" height="20" uuid="d7dfe5d8-12ec-4945-be03-11b09c3341aa"/>
+				<textElement>
+					<font size="13"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{id_tecnico}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="116" y="0" width="160" height="20" uuid="2a6488c5-16a1-40d0-b57c-d11f74aa96dd"/>
+				<textElement>
+					<font size="13"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nome_tecnico}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="300" y="0" width="124" height="20" uuid="5c3ccbdf-6b7e-409a-bdbe-87ba2d2d8dd9"/>
+				<textElement>
+					<font size="13"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{telefone_tecnico}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="450" y="0" width="203" height="20" uuid="b2123603-cf90-4931-85c6-765757efed34"/>
+				<textElement>
+					<font size="13"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{email_tecnico}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="681" y="0" width="121" height="20" uuid="fdc6f532-4d77-4fc7-b4d1-9681ff3ab4be"/>
+				<textElement>
+					<font size="13"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{estatus_tecnico}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="31" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="2" width="800" height="29" backcolor="#000000" uuid="25eb865b-515f-4fc7-ba9b-247e2a44e6dd"/>
+			</rectangle>
+			<textField>
+				<reportElement x="653" y="9" width="80" height="20" forecolor="#FFFFFF" uuid="6ca38a28-a93c-4cf3-9cd7-207adfb372b2"/>
+				<textElement textAlignment="Right">
+					<font size="13"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="733" y="9" width="57" height="20" forecolor="#FFFFFF" uuid="2fbd72cb-329a-4b3f-8101-7681dfa6ff83"/>
+				<textElement>
+					<font size="13"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="12" y="9" width="187" height="20" forecolor="#FFFFFF" uuid="8ac96fd0-5c7e-4002-88b4-8e0ddab4c7b0"/>
+				<textElement>
+					<font size="13"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+</jasperReport>

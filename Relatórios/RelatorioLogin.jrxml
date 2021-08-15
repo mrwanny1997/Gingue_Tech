@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="RelatorioLogin" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="0b99c23d-adc2-45f9-b3ec-07abda0f437e">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[select * from tb_login]]>
+	</queryString>
+	<field name="id_login" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="login" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="senha" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="123" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="2" y="3" width="800" height="120" forecolor="#99FFFF" backcolor="#99FFFF" uuid="0d849c05-436c-45ae-86ca-e34bc2fc995e"/>
+				<image>
+					<reportElement x="221" y="10" width="400" height="100" uuid="00877f0a-0839-41cb-8d8c-bb305d12d8fd"/>
+					<imageExpression><![CDATA["C:\\Users\\Mr. Wanny\\Documents\\NetBeansProjects\\Empresa Gingue Tech\\src\\Imagens\\Gingue Tech 2.0.png"]]></imageExpression>
+				</image>
+				<staticText>
+					<reportElement x="10" y="66" width="167" height="44" uuid="c7af03d0-48cf-45a6-95e1-8a0c87f68da0"/>
+					<textElement>
+						<font size="30"/>
+					</textElement>
+					<text><![CDATA[TÉCNICOS]]></text>
+				</staticText>
+			</frame>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="70" splitType="Stretch">
+			<rectangle radius="10">
+				<reportElement x="2" y="20" width="800" height="35" forecolor="#000000" backcolor="#FFFFFF" uuid="1e4d9ad5-c5ef-491d-86bd-29d3a60aad0e"/>
+			</rectangle>
+			<staticText>
+				<reportElement mode="Transparent" x="2" y="20" width="800" height="35" forecolor="#000000" uuid="df80d2a1-1859-4d8d-b6b8-ce8c604d08d1"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="20" isBold="true"/>
+				</textElement>
+				<text><![CDATA[LISTA DE TÉCNICOS]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch">
+			<staticText>
+				<reportElement x="12" y="0" width="200" height="20" uuid="4cc74285-6587-4d6e-a0d6-2e4820ff3590"/>
+				<textElement>
+					<font size="13" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="267" y="0" width="197" height="20" uuid="9ee98ccd-86e4-49b3-8ec1-fa24ab6489c5"/>
+				<textElement>
+					<font size="13" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Login]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="543" y="0" width="259" height="20" uuid="823fe4af-d18b-4649-a5ab-5c088dc11dbb"/>
+				<textElement>
+					<font size="13" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Senha]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="50">
+			<textField>
+				<reportElement x="12" y="0" width="200" height="20" uuid="534c0b8c-29a8-44df-bcad-11caf2c78356"/>
+				<textElement>
+					<font size="13"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{id_login}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="267" y="0" width="197" height="20" uuid="a62e02db-f38c-449b-a5ec-a57de4420f6b"/>
+				<textElement>
+					<font size="13"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{login}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="543" y="0" width="259" height="20" uuid="16b3dae0-2650-4191-8c41-c311878d95f0"/>
+				<textElement>
+					<font size="13"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{senha}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="54" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="0" width="802" height="29" backcolor="#000000" uuid="252e9333-b43f-48b8-9240-dc3de415eb64"/>
+			</rectangle>
+			<textField>
+				<reportElement x="655" y="9" width="80" height="20" forecolor="#FFFFFF" uuid="71cac572-fe4c-45b0-b71d-508cf76e6109"/>
+				<textElement textAlignment="Right">
+					<font size="13"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="735" y="9" width="57" height="20" forecolor="#FFFFFF" uuid="297001f5-b679-4bff-82f1-17ed8c320615"/>
+				<textElement>
+					<font size="13"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="12" y="9" width="187" height="20" forecolor="#FFFFFF" uuid="9794d0d2-f1c0-457f-bcfb-18dff133a25f"/>
+				<textElement>
+					<font size="13"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+</jasperReport>
